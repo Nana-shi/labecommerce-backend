@@ -1,0 +1,22 @@
+{
+  "name": "labecommerce-backend",
+  "version": "1.0.0",
+  "description": "**Atividades aula Node-Package-JSON 02/01/23**",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "par-ou-impar": "clear && node par-ou-impar.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nana-shi/labecommerce-backend.git"
+  },
+  "author": "Leonardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nana-shi/labecommerce-backend/issues"
+  },
+  "homepage": "https://github.com/Nana-shi/labecommerce-backend#readme"
+}
