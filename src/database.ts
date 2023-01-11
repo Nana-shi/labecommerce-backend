@@ -28,7 +28,7 @@ export const Purchases: TPurchase[] = [{
     quantity: 1,
     totalPrice: 1200.00
 }, {
-    userId: "id002",
+    userId: "id001",
     productId: "p002",
     quantity: 2,
     totalPrice: 240.00
