@@ -14,12 +14,12 @@ export const Products: TProduct[] = [{
     id: "p001",
     name: "Monitor",
     price: 1200.00,
-    PRODUCT_CATEGORY: PRODUCT_CATEGORY.ELETRONICS
+    category: PRODUCT_CATEGORY.ELETRONICS
 }, {
     id: "p002",
-    name: "Tênis Preto",
-    price: 120.00,
-    PRODUCT_CATEGORY: PRODUCT_CATEGORY.CLOTHES_AND_SHOES
+    name: "Bolo de chocolate",
+    price: 200.00,
+    category: PRODUCT_CATEGORY.FOODS
 }]
 
 export const Purchases: TPurchase[] = [{
@@ -31,7 +31,7 @@ export const Purchases: TPurchase[] = [{
     userId: "id001",
     productId: "p002",
     quantity: 2,
-    totalPrice: 240.00
+    totalPrice: 400.00
 }]
 
 // FUNÇÕES ABAIXO
@@ -50,12 +50,12 @@ export function getAllUsers():void{
     console.table(Users)
 }
 
-export function createProduct(par1:string, par2:string, par3:number, par4:string):void{
+export function createProduct(par1:string, par2:string, par3:number, par4:PRODUCT_CATEGORY):void{
     const newProduct: TProduct = {
         id: par1,
         name: par2,
         price: par3,
-        PRODUCT_CATEGORY: par4
+        category: par4
     }
     Products.push(newProduct)
 }
