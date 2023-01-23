@@ -104,22 +104,22 @@ VALUES
     ("c004", 139.70, 139.70, NULL, "id002" );
 
 UPDATE purchases
-SET delivered_at = DATETIME()
+SET delivered_at = DATETIME('now')
 WHERE id = "c001";
 
 
 UPDATE purchases
-SET delivered_at = DATETIME()
+SET delivered_at = DATETIME('now')
 WHERE id = "c002";
 
 
 UPDATE purchases
-SET delivered_at = DATETIME()
+SET delivered_at = DATETIME('now')
 WHERE id = "c003";
 
 
 UPDATE purchases
-SET delivered_at = DATETIME()
+SET delivered_at = DATETIME('now')
 WHERE id = "c004";
 
 --Exercicio3
@@ -151,4 +151,35 @@ SELECT purchases.id AS purchaseId,
 INNER JOIN users
 ON purchases.buyer_id = users.id
 WHERE buyer_id = "id002";
+
+-- 19/01 -- Relações em SQL II Exercicios
+
+--Exercicio 1
+CREATE TABLE purchases_products(
+    purchase_id TEXT NOT NULL,
+    product_id TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY (purchase_id) REFERENCES purchases(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+SELECT * FROM purchases_products;
+
+--Exercicio 2
+INSERT INTO purchases_products (purchase_id, product_id, quantity)
+VALUES
+    ("c001","p002", 2),
+    ("c003", "p004", 2),
+    ("c004", "p005", 2);
+
+SELECT purchases.id AS purchaseId,
+    products.id AS productId,
+    products.name AS productName,
+    purchases_products.quantity,
+    purchases.buyer_id,
+    purchases.total_price FROM purchases_products
+INNER JOIN purchases
+ON purchases_products.purchase_id = purchases.id
+INNER JOIN products
+ON purchases_products.product_id = products.id;
 
