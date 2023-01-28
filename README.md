@@ -2,7 +2,7 @@
 
 ## Introdução
 
-O Projeto 'Labecommerce' é uma API para armazenar todas as informações de um e-commerce em uma base de dados.
+O Projeto 'Labecommerce' é uma API para armazenar todas as informações de um e-commerce em um banco de dados.
 
 As informações contidas no banco de dados são as seguintes:
 
